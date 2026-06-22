@@ -1,0 +1,52 @@
+FINAL_4500_FREEZE_STATUS=PASS
+FINAL_RUN_JOB_ID=1686053
+DATE_UTC=2026-06-22T16:23:07+00:00
+
+===== FINAL RUN STATUS =====
+FINAL_4500_RUN_STATUS=PASS
+JOB_ID=1686053
+UTC=2026-06-22T14:44:39+00:00
+TASKS=4500
+WORKERS=128
+METHODS=BL,BS,HT,FT
+
+===== FINAL AGGREGATION STATUS =====
+FINAL_AGGREGATION_STATUS=PASS
+TASKS_OBSERVED=4500
+TASKS_EXPECTED=4500
+METRICS_SELECTED_ROWS=18000
+METRICS_SELECTED_ROWS_EXPECTED=18000
+GAP_SELECTED_ROWS=4500
+GAP_SELECTED_ROWS_EXPECTED=4500
+BS_NEGATIVE_EIGEN_COUNT=0
+WORKERS_OBSERVED=128
+WORKERS_EXPECTED=128
+MEAN_TASK_SECONDS=3.7872614
+MAX_TASK_SECONDS=9.4608068
+METHODS=BL,BS,HT,FT
+
+===== FINAL VALIDATION STATUS =====
+FINAL_4500_VALIDATION_STATUS=PASS
+TASKS_OBSERVED=4500
+METRICS_SELECTED_ROWS=18000
+GAP_SELECTED_ROWS=4500
+BS_NEGATIVE_EIGEN_COUNT=0
+FINAL_TASK_STDERR_CHECK=PASS
+
+===== GIT HEAD BEFORE FREEZE =====
+33713f0 (HEAD -> deucalion-revision-20260620) Run final unified workers without internal srun steps
+80d2e36 Increase final unified run walltime
+6a4f2c9 Make unified task worker compatible with final manifest
+c329ef8 Fix final worker design manifest environment
+d81ade5 Add final unified Monte Carlo production runner
+4c8e216 Add final unified Monte Carlo design materialization
+0c19c2f (tag: unified-worker-tested-20260622) Add unified BL BS HT FT pilot engine
+8c1d0bc Normalize validation provenance text files
+
+===== RESULT HASHES =====
+9c45216e8ac5a9ceb6ff2b865e3f367d3cf7fa639f2855b25a6ed708e646f060  /projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/unified_final/aggregated/final_task_status.csv
+f328c2a4443dfb85286349ae45613d481eaa51a933b15427660e092a2dca1267  /projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/unified_final/aggregated/final_metrics_selected_bandwidth.csv
+86cd1077c50ee475b8cc3fed1eddfdf9d2a4966b832147af6a4454b4f1fb5c4d  /projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/unified_final/aggregated/final_gap_selected_bandwidth.csv
+e514a695ba6c194236b19a3428ec83bfe72ceaeb30d043883d47150361dbcd5f  /projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/unified_final/aggregated/final_negative_eigen_summary.csv
+1c71f6e128721880a2e4d6bda4bafde68c9f2fdc12473c2f0902dbb161f6da86  /projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/unified_final/aggregated/final_selected_summary.csv
+59c9463182f8f05f6519679b487d371ef764038c1f1a79f8b4f7fa3b2436f7b0  /projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/unified_final/aggregated/final_timing_by_cell.csv

@@ -1,0 +1,24 @@
+\section{Real-data illustration}
+\label{sec:real-application}
+
+We conclude with a short real-data illustration based on daily meteorological observations from Lisbon. The purpose of this example is not to provide a climatological analysis, but to show how the proposed estimator behaves when applied to a genuinely dependent time series. We use daily mean temperature, defined as the average of the recorded daily minimum and maximum temperatures, and consider the centred threshold indicators associated with the probability grid $0.05,0.10,\ldots,0.95$.
+
+The retained series contains $n=59441$ observed daily values, spanning the period from 1855-12-01 to 2018-08-31. The selected bandwidth is $b=160$. All four estimators are computed on the same threshold grid and using the same data.
+
+Table~\ref{tab:real-estimator-diagnostics} reports basic matrix diagnostics. The relevant diagnostic is the minimum eigenvalue, since the target object is a covariance kernel. In applications involving simulation, regularisation, inversion or quadratic-form inference, an indefinite covariance estimate may require an additional repair step. The Bartlett sandwich estimator avoids this issue by construction and yields a positive semidefinite estimate in this empirical illustration.
+
+\input{table_real_application_estimator_diagnostics}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.80\textwidth]{fig_real_bartlett_sandwich_heatmap.pdf}
+\caption{Bartlett sandwich estimate of the long-run covariance matrix of centred threshold indicators in the Lisbon daily-temperature illustration.}
+\label{fig:real-bs-heatmap}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.80\textwidth]{fig_real_minimum_eigenvalue.pdf}
+\caption{Minimum eigenvalue of the real-data covariance estimates across the four estimators.}
+\label{fig:real-min-eigen}
+\end{figure}

@@ -1,0 +1,14 @@
+Item,Value
+Data file,dados_publicos_ipma_para_R.xlsx
+Worksheet,long_daily_lisbon_temp
+Station,Lisboa Geofisico
+Station code,535
+First date,1855-12-01
+Last date,2018-08-31
+Daily grid length,59444
+Observed temperature values,59441
+Missing values on daily grid,3
+Temperature definition,(tmin + tmax) / 2
+Probability grid,"0.05, 0.10, ..., 0.95"
+Selected bandwidth,160
+Source URL,https://api.ipma.pt/open-data/observation/climate/monthly-long-series/tmintmaxdaily_1855-2018_Lisbon-Geofisico.xlsx

@@ -1,0 +1,10 @@
+
+# Deucalion-generated files
+results/
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/staging/
+*.out
+*.err
