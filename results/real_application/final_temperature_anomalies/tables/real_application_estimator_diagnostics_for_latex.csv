@@ -1,0 +1,5 @@
+Method,Selected bandwidth,Trace,Minimum eigenvalue,Maximum eigenvalue,Negative minimum eigenvalue,Near singular
+Bartlett lag-window,106,23.9384,0.011871,20.3283,no,no
+Bartlett sandwich,106,23.8958,0.011872,20.3040,no,no
+Exact flat-top,106,28.1031,0.011283,24.1908,no,no
+Hard truncation,106,29.7885,0.010844,25.9412,no,no

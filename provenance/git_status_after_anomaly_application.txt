@@ -1,0 +1,4 @@
+ M hpc/slurm/09_make_final_mc_figures.sbatch
+?? hpc/slurm/10_run_real_application_temperature.sbatch
+?? hpc/unified/audit_lisbon_temperature_dates.R
+?? hpc/unified/audit_real_application_data.R

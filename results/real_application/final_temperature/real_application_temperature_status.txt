@@ -1,8 +1,0 @@
-REAL_APPLICATION_TEMPERATURE_STATUS=PASS
-DATA_FILE=/projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/repository_work/data/dados_publicos_ipma_para_R.xlsx
-WORKSHEET=long_daily_lisbon_temp
-N_TEMPERATURE=59441
-DATE_MIN=1855-12-01
-DATE_MAX=2018-08-31
-SELECTED_BANDWIDTH=160
-OUTPUT_DIR=/projects/F202500010HPCVLABUMINHO/cecilia/LSTA-2026-0415_lrk_estimation/results/real_application/final_temperature

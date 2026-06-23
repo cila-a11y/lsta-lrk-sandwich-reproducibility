@@ -1,0 +1,10 @@
+0ba8109 (HEAD -> deucalion-revision-20260620) Aggregate duplicated dates in Lisbon anomaly application
+4e0abbd Add anomaly-based Lisbon temperature application
+b9b7bd4 Fix Lisbon temperature Excel serial dates
+1b3edff Fix Lisbon real-data date parsing
+e66ed7b Add final Monte Carlo figure generation job
+2db3e69 Add final article table generator
+33713f0 (tag: unified-final4500-validated-20260622) Run final unified workers without internal srun steps
+80d2e36 Increase final unified run walltime
+6a4f2c9 Make unified task worker compatible with final manifest
+c329ef8 Fix final worker design manifest environment

@@ -1,0 +1,22 @@
+Item,Value
+Data file,dados_publicos_ipma_para_R.xlsx
+Worksheet,long_daily_lisbon_temp
+Station,Lisboa Geofisico
+Station code,535
+First date,1855-12-01
+Last date,2018-08-31
+Daily grid length,59444
+Observed raw daily mean values,59441
+Duplicated calendar dates aggregated,3
+Extra duplicate rows averaged,3
+Linearly interpolated daily mean values,3
+Date conversion,"Excel serial date, origin 1899-12-30"
+Temperature definition,(tmin + tmax) / 2
+Adjustment,day-of-year effects; 29 February pooled with 28 February; linear trend removed
+"Trend removed from seasonally adjusted series, degrees per decade",0.116785
+Probability grid,"0.05, 0.10, ..., 0.95"
+Empirical quantile type,R type 8
+Bandwidth cap,"min(160, floor(n/4)) = 160"
+Bandwidth screening rule,first accepted bandwidth after five consecutive screening lags
+Selected bandwidth,106
+Source URL,https://api.ipma.pt/open-data/observation/climate/monthly-long-series/tmintmaxdaily_1855-2018_Lisbon-Geofisico.xlsx
