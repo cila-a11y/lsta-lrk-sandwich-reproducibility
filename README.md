@@ -34,7 +34,14 @@ The real-data illustration uses daily minimum and maximum temperature observatio
 
 ## Main empirical finding
 
-The Bartlett sandwich estimator produced no indefinite covariance estimate in the final Monte Carlo run. In the Lisbon temperature illustration, the Bartlett sandwich estimate is positive semidefinite, whereas the exact flat-top and hard-truncation estimates are indefinite.
+The Bartlett sandwich estimator produced no indefinite covariance estimate in
+the final Monte Carlo run. In the Lisbon temperature-anomaly application, all
+four estimators are positive definite on the selected threshold grid. The
+Bartlett sandwich and Bartlett lag-window estimates are numerically very close,
+with Frobenius and sup-norm gaps of 0.04639 and 0.00688, respectively, while
+the Bartlett sandwich estimator remains positive semidefinite by construction.
+The evidence that BL, FT, and HT can be indefinite is provided by the Monte
+Carlo study rather than by the adjusted real-data application.
 
 ## Reproducibility notes
 
@@ -47,3 +54,5 @@ The final validation tag was:
 unified-final4500-validated-20260622
 
 SHA-256 checksums are provided in provenance/.
+
+
