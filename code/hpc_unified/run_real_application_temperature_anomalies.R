@@ -1,4 +1,4 @@
-#!/usr/bin/env Rscript
+﻿#!/usr/bin/env Rscript
 
 suppressPackageStartupMessages({
   library(readxl)
@@ -708,7 +708,7 @@ text_block <- c(
     min(temp_complete$date),
     " to ",
     max(temp_complete$date),
-    ". Daily mean temperature is defined as $(T_{\\min,t}+T_{\\max,t})/2$. The two missing daily mean values are filled by linear interpolation to preserve the regular calendar spacing used by the lag estimators. Deterministic seasonality is removed through day-of-year effects, with 29 February pooled with 28 February, and a linear trend is then removed from the seasonally adjusted series. The covariance analysis is carried out on the resulting anomaly series."
+    ". Daily mean temperature is defined as $(T_{\\min,t}+T_{\\max,t})/2$. After averaging duplicate calendar records, the three missing daily mean values on the complete daily calendar are filled by linear interpolation to preserve the regular calendar spacing used by the lag estimators. Deterministic seasonality is removed through day-of-year effects, with 29 February pooled with 28 February, and a linear trend is then removed from the seasonally adjusted series. The covariance analysis is carried out on the resulting anomaly series."
   ),
   "",
   paste0(
@@ -719,8 +719,8 @@ text_block <- c(
   "",
   "\\begin{figure}[!htbp]",
   "\\centering",
-  "\\includegraphics[width=0.86\\textwidth]{fig_real_lisbon_temperature_series.pdf}",
-  "\\caption{Daily mean temperature series for Lisboa/Geofisico used to construct the real-data illustration. The covariance estimators are applied to the corresponding seasonally adjusted and detrended anomaly series.}",
+  "\\includegraphics[width=0.86\\textwidth]{fig_real_lisbon_temperature_anomaly_series.pdf}",
+  "\\caption{Seasonally adjusted and linearly detrended daily temperature anomaly series for Lisboa/Geofisico used in the real-data illustration.}",
   "\\label{fig:real-temperature-series}",
   "\\end{figure}",
   "",
@@ -731,7 +731,7 @@ text_block <- c(
   "\\begin{figure}[!htbp]",
   "\\centering",
   "\\includegraphics[width=0.78\\textwidth]{fig_real_minimum_eigenvalue.pdf}",
-  "\\caption{Minimum eigenvalue of the estimated long-run covariance matrix in the Lisbon daily-temperature illustration. Numerical labels identify values close to zero.}",
+  "\\caption{Minimum eigenvalue of the estimated long-run covariance matrix in the Lisbon daily-temperature anomaly illustration. All four estimates are positive on the selected threshold grid; numerical labels identify values close to zero.}",
   "\\label{fig:real-min-eigen}",
   "\\end{figure}",
   "",
@@ -790,3 +790,4 @@ cat("N_DAILY_GRID=", nrow(temp_complete), "\n", sep = "")
 cat("N_ANALYSIS=", n, "\n", sep = "")
 cat("SELECTED_BANDWIDTH=", selected_bandwidth, "\n", sep = "")
 cat("OUTPUT_DIR=", out_dir, "\n", sep = "")
+

@@ -1,28 +1,36 @@
-\section{Real-data illustration}
+﻿\section{Real-data illustration}
 \label{sec:empirical_application}
 
 We complement the Monte Carlo study with a short real-data illustration based on daily temperature observations from Lisboa/Geofisico. The purpose of this example is descriptive. It is not intended as a climatological analysis, nor as a validation of the stationary-association assumptions for the original meteorological series. Instead, the objective is to show how the covariance estimators behave when applied to a long, genuinely dependent series after removing the most evident deterministic calendar structure.
 
-The public IPMA worksheet contains a daily calendar from 1855-12-01 to 2018-08-31. Daily mean temperature is defined as $(T_{\min,t}+T_{\max,t})/2$. The two missing daily mean values are filled by linear interpolation to preserve the regular calendar spacing used by the lag estimators. Deterministic seasonality is removed through day-of-year effects, with 29 February pooled with 28 February, and a linear trend is then removed from the seasonally adjusted series. The covariance analysis is carried out on the resulting anomaly series.
+The public IPMA worksheet contains 59,444 rows and 59,441 distinct calendar dates from 1855-12-01 to 2018-08-31. Daily mean temperature is defined as
+\[
+T_t=\frac{T_{\min,t}+T_{\max,t}}{2}.
+\]
+Three duplicated calendar dates are averaged before constructing the complete daily calendar. The resulting three missing daily mean values are filled by linear interpolation to preserve the regular calendar spacing used by the lag estimators. Deterministic seasonality is removed through day-of-year effects, with 29 February pooled with 28 February, and a linear trend is then removed from the seasonally adjusted series. The covariance analysis is carried out on the resulting anomaly series.
 
-The estimators are applied to centred threshold indicators on the probability grid $0.05,0.10,\ldots,0.95$. Empirical quantiles are computed using the R type-8 definition. The bandwidth grid is capped at $\min(160,\lfloor n/4\rfloor)$, and the screening rule selects the first accepted bandwidth after five consecutive screening lags. The selected bandwidth is $b=106$.
+The estimators are applied to centred threshold indicators on the probability grid \(0.05,0.10,\ldots,0.95\). Empirical quantiles are computed using the R type-8 definition. The bandwidth grid is capped at \(\min(160,\lfloor n/4\rfloor)\), and the screening rule selects the first accepted bandwidth after five consecutive screening lags. The selected bandwidth is \(b=106\).
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.86\textwidth]{fig_real_lisbon_temperature_series.pdf}
-\caption{Daily mean temperature series for Lisboa/Geofisico used to construct the real-data illustration. The covariance estimators are applied to the corresponding seasonally adjusted and detrended anomaly series.}
-\label{fig:real-temperature-series}
+\includegraphics[width=0.86\textwidth]{fig_real_lisbon_temperature_anomaly_series.pdf}
+\caption{Seasonally adjusted and linearly detrended daily temperature anomaly series for Lisboa/Geofisico used in the real-data illustration.}
+\label{fig:real-temperature-anomaly-series}
 \end{figure}
 
 Table~\ref{tab:real-estimator-diagnostics} reports basic matrix diagnostics for the four estimators on the same probability grid and with the same selected bandwidth. The most relevant diagnostic is the minimum eigenvalue, since the target object is a covariance kernel. In applications involving Gaussian approximation, simulation, regularisation, inversion or quadratic-form inference, an indefinite covariance estimate may require an additional repair step.
 
 \input{table_real_application_estimator_diagnostics}
 
+The diagnostics show that all four estimators are positive definite on the selected threshold grid in this adjusted empirical application. The Bartlett sandwich and ordinary Bartlett lag-window estimates are particularly close: their traces are \(23.896\) and \(23.938\), respectively, their minimum eigenvalues are both approximately \(0.0119\), and their Frobenius and sup-norm gaps are \(0.04639\) and \(0.00688\). Thus, the sandwich correction does not materially alter the Bartlett lag-window estimate in this example, while retaining the positive-semidefinite guarantee by construction.
+
+The exact flat-top and hard-truncation estimates are also positive definite in this adjusted empirical sample, but they have larger traces and leading eigenvalues than the two Bartlett-based estimates. The evidence that Bartlett lag-window, exact flat-top and hard truncation can be indefinite in finite samples is provided by the Monte Carlo study rather than by this adjusted real-data application.
+
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.78\textwidth]{fig_real_minimum_eigenvalue.pdf}
-\caption{Minimum eigenvalue of the estimated long-run covariance matrix in the Lisbon daily-temperature illustration. Numerical labels identify values close to zero.}
+\caption{Minimum eigenvalue of the estimated long-run covariance matrix in the Lisbon daily-temperature anomaly illustration. All four estimates are positive on the selected threshold grid; numerical labels identify the values close to zero.}
 \label{fig:real-min-eigen}
 \end{figure}
 
-The empirical illustration should be interpreted as a finite-sample diagnostic rather than as a formal model check. Its role is to show the practical consequence of covariance geometry. The Bartlett sandwich estimator provides a positive-semidefinite covariance estimate by construction, while the other lag-window estimates may require additional numerical checks or repairs if they are to be used as covariance matrices in downstream procedures.
+The empirical illustration should be interpreted as a finite-sample diagnostic rather than as a formal model check. Its role is to show the practical consequence of covariance geometry. The Bartlett sandwich estimator provides a positive-semidefinite covariance estimate by construction, while the Monte Carlo study documents that other lag-window estimates may require additional numerical checks or repairs if they are to be used as covariance matrices in downstream procedures.

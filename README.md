@@ -8,8 +8,8 @@ This repository contains the reproducibility materials for the revised manuscrip
 
 - code/: R scripts and Deucalion SLURM workflows used to run the validated Monte Carlo study and the real-data illustration.
 - data/: public IPMA workbook used in the Lisbon temperature illustration.
-- esults/monte_carlo/: validated final Monte Carlo outputs, manuscript tables, and validation files.
-- esults/real_application/: real-data application outputs, diagnostics, tables, figures, and LaTeX blocks.
+- results/monte_carlo/: validated final Monte Carlo outputs, manuscript tables, and validation files.
+- results/real_application/: real-data application outputs, diagnostics, tables, figures, and LaTeX blocks.
 - provenance/: Git state, freeze manifests, job identifiers, and SHA-256 checksums.
 
 ## Final Monte Carlo validation
@@ -54,5 +54,6 @@ The final validation tag was:
 unified-final4500-validated-20260622
 
 SHA-256 checksums are provided in provenance/.
+
 
 
